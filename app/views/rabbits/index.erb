@@ -1,0 +1,8 @@
+<ul class="list-group">
+	<% @rabbits.each do |rabbit| %> 
+  <a href="/rabbits/<%= rabbit.id %>" class="list-group-item">
+  	<%= rabbit.name %> 
+  </a>
+  <% end %>
+</ul>
+

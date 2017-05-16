@@ -29,7 +29,7 @@
         <li><a href="/">Home</a></li>
         <!-- will be profile redirect -->
         <li>
-          <a href="/"><%= current_user.name  %></a>
+          <a href="/users/<%= current_user.id %>"><%= current_user.name  %></a>
         </li>
         <li><a href="/logout">Logout</a></li>
       </ul>

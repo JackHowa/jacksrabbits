@@ -1,11 +1,12 @@
 require 'bcrypt'
+
 class User < ActiveRecord::Base
   
 	 validates :email, presence: true, uniqueness: true
 	 validates :hashed_password, presence: true
 
-   # has_many :rabbits
-   # has_many :rabbit_walks, through: :rabbits
+   has_many :walks
+   has_many :rabbits, through: :walks
 
 
   def password

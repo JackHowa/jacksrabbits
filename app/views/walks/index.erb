@@ -1,0 +1,7 @@
+<ul class="list-group">
+  <% @walks.each do |walk| %>
+  <a href="/walks/<%= walk.id %>" class="list-group-item">
+    <%= walk.location %>
+  </a>
+  <% end %>
+</ul>

@@ -1,3 +1,11 @@
+<% if @errors %>
+  <ul>
+    <% @errors.each do |error| %>
+    <li><%= error %></li>
+    <%end %>
+  </ul>
+<%end %>
+
 <form action="/sessions" method="post">
   <div class="form-group">
     <label>Login</label>

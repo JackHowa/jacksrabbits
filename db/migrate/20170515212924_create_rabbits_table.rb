@@ -1,4 +1,4 @@
-class CreateRabbitsTable < ActiveRecord::Migration
+class CreateRabbitsTable < ActiveRecord::Migration[5.0]
   def change
   	create_table :rabbits do |t|
   		t.string :name, null: false 

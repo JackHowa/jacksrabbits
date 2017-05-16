@@ -12,13 +12,52 @@
   -->
   <link rel="stylesheet" href="/css/application.css">
   <!-- boostrap -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet"/>
 
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
 
-  <title></title>
+   <title>Jack's Rabbits</title>
+        <% if logged_in? %>
+          <nav class="navbar navbar-default">
+            <div class="container-fluid">
+              <div class="navbar-header">
+                 <a class="navbar-brand" href="/">Jack's Rabbits</a>
+              </div>
+            <ul class="nav navbar-nav">
+            <li><a href="/">Home</a></li>
+            <!-- will be profile redirect -->
+            <li>
+              <a href="/"><%= current_user.first_name  %></a>
+            </li>
+            <li><a href="/logout">Logout</a></li>
+          </ul>
+        </div>
+        </nav>
+      </ul>
+        <% else %>
+          <nav class="navbar navbar-default">
+            <div class="container-fluid">
+              <div class="navbar-header">
+                <a class="navbar-brand" href="/">Jack's Rabbits</a>
+              </div>
+            <ul class="nav navbar-nav">
+              <li>
+                <a href="/">Home</a>
+              </li>
+              <li>
+                <a href="/users/new">Register</a>
+              </li>
+              <li>
+                <a href="/sessions/new">Login</a>
+              </li>
+             </ul>
+          </div>
+        </nav>
+      </ul>
+     <% end %>
+   </nav>
 </head>
 <body>
   <%= yield %>
